@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  <title>个人生活台 · WorkBuddy</title>
+  <meta name="description" content="WorkBuddy 资料库工作台 · 个人生活台" />
+
+  <!-- PWA / 安装必需 -->
+  <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%20%22%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB%E5%8F%B0%20%C2%B7%20WorkBuddy%22%2C%20%22short_name%22%3A%20%22%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB%E5%8F%B0%22%2C%20%22description%22%3A%20%22WorkBuddy%20%E8%B5%84%E6%96%99%E5%BA%93%E5%B7%A5%E4%BD%9C%E5%8F%B0%20%C2%B7%20%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB%E5%8F%B0%22%2C%20%22id%22%3A%20%22./%3Fsource%3Dpwa-desk%22%2C%20%22start_url%22%3A%20%22./%22%2C%20%22scope%22%3A%20%22./%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22display_override%22%3A%20%5B%22standalone%22%2C%20%22fullscreen%22%2C%20%22minimal-ui%22%5D%2C%20%22orientation%22%3A%20%22portrait%22%2C%20%22background_color%22%3A%20%22%230f1226%22%2C%20%22theme_color%22%3A%20%22%234F7CFF%22%2C%20%22lang%22%3A%20%22zh-CN%22%2C%20%22categories%22%3A%20%5B%22productivity%22%2C%20%22utilities%22%5D%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAFzUlEQVR4nO3dXXPTRhTG8ZXH34%2BU0tIpL%2BWutDC4U5oQQoBhQkNI6ExvOu1dKZiL8ho%2BoblwlNjxi7TSrlZ7nv9vRjdlGi/Wc3SO1gouXM9c2J1MUq8BcX1%2BWhSp11BKupALDwg7pj7/nqYoOn9RQo8qXRZDZy9E8OGri0KI/gIbBB8tHUcshGg/mOAjtBiFEPwHbuwQfMR1vB%2BuEIIWwFeEHx35FKgIgvwQgo9U2hbCoO0CCD9Sapu/VtVzkfCjJz427ASNOwDhR580zWOjqrl4n/Cjnz4%2B8%2BsE3gXwNeFHz33wKAKvEYjwIwc%2BOa1dAIQfOamb11oFQPiRozq5rZyVLhF%2BZO79mnuCYeX/Tfxh2NoR6NI2V3/kb12OV7aGbwg/jHl3sDgKtX4WCMjZ0gLg6g%2BLluV66U1wb/7NCiCyhax/e4%2BrP2x7%2B/zsXoB7AEib6wCXufpDxP8nXYAOAGmnBcDVH0rKvNMBIO10G7Tg%2Bg9BhXPOfbfF%2BANNjECQNnSOT36hiw4AaRQApBXfb3IDDF10AEir/p1gQ94cpl5BPq5spV5BN4orAiPQmOA3dtV4IZgfgQh/O9bfP9MFYP3kdcXy%2BzhwE%2BcsHpZPWgrjQ5f8nMY4BoWbfhJs6RgfrTqNaGN8lP7chj5Mj0BAFXMF8Jqrf1TW3t8hD8LBl6XMmOsAgI8h//ozvBnKDCMQvFnKDCMQpFEAkMYI5JzbeJh6Besd76VewTxLmZHvAH0Pv3PTNeawzhzZexbIQ26h6s16U5/jkM8ChX5vgJxwDwBvljJDB4A0CgDSGIHgzVJmeBYI/gxlhhEI0hiB4M1SZugAkEYBQBojELxZygy7QPBnKDPSI1DfHjOuktt6c8AIBG%2BWMiPdAZzL46p6vJfHOnMk9f0AqxAuXfIdANqGfEM8fFnKDB0A0igASGMbFN4sZYYOAGkUAKSxCwRvljJDB4A0CgDS2AWCN0uZoQNAGgUAafxGGPwZygz3APBmKTOMQJBGAUAaIxC8WcoMHQDS2AWCP0OZYQSCN0uZYQSCNAoA0hiB4M1SZugAkMYuEPwZygwdANIGhZvOdFaOO7fDvkGYd%2Bd2%2BnMc8qADQJrJAqALxGHxfTU3ApXHyODJSmlkbPQ5G4Emzlk9RrdWnE14Gd1yyc9lrMPkCDSLImjH%2BvtXjH6eGNrVXe/Pv1KvIB%2B/GA9%2BSaoAuhS62FQC2TXzIxCwDg/DZYLzFAfPAuWC8xQFIxCkUQCQxj1AJjhPcdABII0CgDS%2BIywTnKc4il9v8knwMn/8nXoF4d39KfUK%2BocCOMdi8M%2BjEM6wCySIc36Gm%2BAZLwSu/s7p/D3roAAgjV0gUZz3KTrAjM2bqVfQDZW/Zx0UAKQVv/3INugyR/%2BkXkF4XPkXFZsUAIQxAkEavxEGaXwSDGmMQJBGAUAaIxCk0QEgjV0gSGMEgjRGIEijACCNEQjS6ACQxi4QpNEBII17AEijA0AaBQBpjECQxi4QpDECQRojEKTRASCNAoA0RiBIYxcI0hiBII0CgDTuASCNDgBpFACk8R1hkDZ48m/BbQBkMQJB2tA5vjkcuugAkEYBQNrp9PPkBt8WCS2PXxYFHQDSKABIOy2Axy/5PAA6yrwPZ/8jFQA1cyPQI7oABMzmfLjwp%2BwFQcjSK/7eD2yJwqaH/81POewCQdrSAjhfJYAFy3K9eA9wggqAgpUj0C5dAIasynNlyJ9e54YYedt9tfpivnIEKtEGYFnlLtCDNdUD9F1Vfmttg1IEyFGd3Nb%2BHIAiQE7q5tU71PvcFKPndjwu1o2u6vvXKAL0085rv0ml0aMQvi8CdKFJLlsF%2BRmdAD1xv%2BFFudXDcE1fFAipTQ5bPw1KESCltvkLGt4DRiJ0ZDvQhTf41fvgKkWAuLbH4aaOaOMLhYDQQga/FH1%2Bf04hoKV7EYJf6uwGlkKAr5jBL3W%2Bg0MhoEoXwS8l3cI8pBhwYqvD0M/6AinIZTJVW0NXAAAAAElFTkSuQmCC%22%2C%20%22sizes%22%3A%20%22192x192%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%22%7D%2C%20%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAPsUlEQVR4nO3dSbMkVRkG4FNE/T9aRETBYScKQoQyTwLNjC4INXQlCBjhgNj8wnJBFNyuvrezhsw8w/s8y150ZGXdOu%2BbX2ad2hSa9OCru13tYwCYy9dvbza1j4G7eUMqefAVAQ%2Bw9/U7CsLanPAVCHuA0ykFy3JyFyDwAeanEMzLyZyBwAdYn0JwGSfvTEIfoB3KwOmcsBMIfYD2KQPHcZImCH2AfikDN3NibiD4AcahCNzLCbniltAHGN4dZaCUogCUUgQ/QKL0IhD94gU/AKlFIPJFC34ADqUVgagXK/gBmJJSBCJepOAH4FSjF4EHah/A0oQ/AOcYPT%2BGbTe3Xh77jQNgPXfeHW8aMNwLEvwALGWkIjDMCymllO8JfwAW9r9BSsAQL0LwA7C23otA9w8BCn8Aaug9f7ouAL2ffAD61nMOdTm%2B6PmEAzCm3m4JdDcBEP4AtKi3fOqqAPR2cgHI0lNOdTGu6OmEAkAp7d8SaPrgSinlIeEPQKe%2BargENH0LQPgD0LOWc6zZAtDySQOAY7WaZ00WgFZPFgCco8Vca64AtHiSAOBSreVbUwWgtZMDAHNqKeeaeTrxoZfaOSkAsKSv3qv/7YAmJgDCH4AkLeRe9QLQwkkAgLXVzr%2BqI4jvC38Awv230u2AahMA4Q8A9fKwSgEQ/gDwnRq5uHoBEP4AcK%2B183HVAiD8AeBma%2BbkagVA%2BAPAtLXycpUCIPwB4Hhr5Gb1fQAAgPUtXgBc/QPA6ZbOz0U3H3hY%2BAPARb5caKOgxSYAwh8ALrdUnnoGAAACLVIAXP0DwHyWyNXZ7ys8/KLwB4AlfPn%2BfM8DzDoBEP4AsJw5c9YzAAAQaLYC4OofAJY3V97Oci/hB8IfAFb1nwufB3ALAAACXVwAXP0DwPouzV8TAAAIdFEBcPUPAPVcksNnFwDhDwD1nZvHbgEAQKCzCoCrfwBoxzm5bAIAAIFO3kTgEVf/ANCkf5%2BwOZAJAAAEOqkAuPoHgHadktPbk/5n8Q8AQzh6AvDIC67%2BAaB1x%2Ba1ZwAAINBRBcDVPwD045jcNgEAgEAKAAAEmtww4IfG/wDQpX99cPPGQCYAABDovgXA1T8A9Ot%2BOW4CAACBFAAACHRjATD%2BB4D%2B3ZTnJgAAEEgBAIBA134/8FHjfwAYyj8P9gQwAQCAQNtr/9X1PwAM7Z4JwKPPG/8DwGgO890tAAAIpAAAQCAFAAAC3VUA3P8HgHFdzXkTAAAIdNfXAK/dFQgAGI4JAAAE%2BrYA/Mj9fwAY3j7vTQAAIJACAACBFAAACKQAAECgTSkeAASANCYAABBoW0opG9f/ABDFBAAAAikAABBIAQCAQAoAAARSAAAg0ObHz9kDgDr%2B8WHtI4A2PPZ87SMgkQLAagQ%2BTFMGWMvmMQWAhX0h%2BOEsjysDLEgBYDGCH%2BahCLAEDwGyCOEP8/F5YgkmAMzKQgXLMg1gLiYAzEb4w/J8zpiLAsAsLEqwHp835qAAcDGLEazP545LKQBcxCIE9fj8cYnNY896CJDzfPFR7SMASinl8edqHwE92m5qHwEAF7GOcw63ADjL567%2BoRk%2Bj5xDAeBkFhtoj88lp1IAACCQAsBJXGVAu3w%2BOYUCAACBFACO5uoC2udzyrEUAAAIpAAAQCAbAQEMxrrOMUwAOMpn7itCN3xeOYYCAACBFAAACKQAAEAgBQAAAm3LrvYhADA7azsTTAAAIJB9AAAGZG1nigkAAARSAAAgkAIAAIEUAAAIpAAAQCAFAAACKQAAEGhb%2BwDgErdeq30EHLpzu/YRAMewERBdEvztuvreKAP1WNuZ4hYA3RH%2B/fBeQbsUALoiUPrjPYM2KQB0Q5D0y3sH7VEA6IIA6Z/3ENqy9ZvRAAOytjPBBIDmuXIch/cS2qEAAEAgBQAAAtkICGBA1nammAAAQCAFAAACKQAAEEgBAIBACgAABFIAACCQAgAAgewDADAgaztTTAAAIJACAACBFAAACLT1m9EAA7K2M8EEAAACKQAAEEgBAIBACgAABLIREMCArO1MMQEAgEAKAAAEUgAAIJACAACBFAAACKQAAEAgBQAAAikAABDIRkAAA7K2M8UEAAACbf1mNMCArO1MMAGgeXdu1z4C5uK9hHYoAAAQSAEAVuHqH9qiANAF4QEwLwWAbigB/fLeQXvsA0BX7twu5dZrtY%2BCUwj/OqztTDEBoDsCpQ93bnuvoGXb2gcA59gHi2lAe4Q%2B9EEBoGvCBuA8bgEAQCAFAAACKQAAEEgBAIBACgAABLIREMCArO1M2frNaIABWduZ4BYAAARSAAAgkAIAAIEUAAAIpAAAQCAFAAACKQAAEMhGQAADsrYzxQQAAAIpAAAQSAEAgEAKAAAEUgAAIJACAACBFAAACLTd%2BM1ogOFY25liAgAAgRQAAAikAABAIAUAAAIpAAAQSAEAgEAKAAAEUgAAINB2U/sIAJidtZ0pJgAAEEgBAIBACgAABFIAACCQAgAAgRQAAAi0LX4zGmA81nYmmAAAQCAbAQEMyNrOFBMAAAikAABAIAUAAAIpAAAQSAEAgEAKAAAEUgAAIJB9AAAGZG1nigkAAARSAAAgkAIAAIEUAAAIpAAAQKCt34wGGJC1nQkmAAAQSAEAgEA2AgIYkLWdKSYAABBIAQCAQAoAAARSAAAgkAIAAIEUAAAIpAAAQCAFAAAC2QgIYEDWdqaYAABAIAUAAAIpAAAQaPPUkzu/Gs1R/vin2kcAHOPXT9U%2BAnpgAgAAgRQAAAikAHA0Y0Von88px7IPAMBArOkcywQAAAIpAJzkaeNFaJbPJ6dQAAAgkALAyVxlQHt8LjmVAsBZLDbQDp9HzqEAAHRM%2BHMuBYCzWXgA%2BqUAcBElAOrx%2BeMSm6f9GBAz%2BNgPBcGqnhH%2BXMgEgFlYjGA9Pm/MQQFgNhYlWNYzT/mcMZ/N079yC4D5ffzn2kcAY3nmydpHwGhMAFiExQrm4/PEEkwAWJxpAJxH8LMkBYDVKAIwTeizFgWAahQC%2BIbQpwYFABo0WjkScNCe7ab2EQDDs85Ae3wLAAACKQAAEEgBAIBACgAABFIAACCQAgAAgRQAAAhkHwBgcdYZaI8JAAAE2hYbAQNLs85Ac0wAACCQAgAAgRQAAAikAABAIAUAAAIpAAAQyEZAwOKsM9AeEwAACKQAAEAgBQAAAikAABBIAQCAQAoAAARSAAAgkAIAAIG2G7/TDSzMOgPtMQEAgEAKAAAE2vzmiZ3hHBH%2B8JfaR0AvfvvL2kcAy1MAGJ7g51yKACNTABiW4GcuigAj8gwAQxL%2BzMnfEyNSABiOxZol%2BLtiNNtN7SMA6IT1kpGYADCU37tKY0H%2BvhiJAgAAgRQAhuHqjDX4O2MUCgAABFIAACCQAgAAgRQAAAi0LTYCBjiNdZMBbJ79hd8CYBwf/bX2ETC6556ofQQwD7cAACCQAsBQXJ2xJH9fjEQBAIBACgDDcZXGEvxdMRoFgCFZrJmTvydG5FsADM83AziX4GdkCgAxFAGOJfhJoAAAQKDtpvYRAACr8xAgAARSAAAgkAIAAIEUAAAIpAAAQKCt37UGgDwmAAAQyD4AABDIBAAAAikAABBIAQCAQAoAAARSAAAgkAIAAIEUAAAIpAAAQCAbAQFAIBMAAAikAABAIAUAAAIpAAAQaFt2tQ8BAFibCQAABFIAACCQAgAAgWwEBACBTAAAIJACAACBFAAACKQAAEAgBQAAAikAABBIAQCAQPYBAIBAJgAAEEgBAIBACgAABNqWXe1DAADWZgIAAIEUAAAIpAAAQCAFAAAC2QgIAAKZAABAIAUAAAIpAAAQSAEAgEAKAAAEUgAAIJACAACBFAAACGQjIAAIZAIAAIG2ZVf7EACAtZkAAEAgBQAAAikAABBIAQCAQAoAAASyDwAABDIBAIBACgAABFIAACCQAgAAgRQAAAikAABAIAUAAAIpAAAQyEZAABBoW3a1DwEAWJtbAAAQSAEAgEAKAAAEUgAAIJACAACBFAAACKQAAEAgGwEBQCATAAAIpAAAQKAH3vrbxl0AAAhjAgAAgRQAAAikAABAIAUAAAJtSylls6t9GADAmkwAACCQAgAAgR4opZQ3P7EXAACkePOTzcYEAAACKQAAEEgBAIBACgAABPq2AHgQEADGt8/77dV/1AAAIINbAAAQSAEAgEB3FYA3PAcAAMO6mvMmAAAQSAEAgEAKAAAEuvae/xs/3%2B3WPhAAYDlvfHr3c34mAAAQaHvdP/oqAACM7doJwO8%2B9XVAABjFdbnuFgAABFIAACDQjQXAbQAA6N9NeW4CAACBFAAACHTfAuA2AAD06345fu0%2BAFdpAAAwnslbAK%2BbAgBAd6by2zMAABBIAQCAQEcVALcBAKAfx%2BS2CQAABDrpyv6tn%2B12Sx0IAHC51/9%2B3NTeBAAAAp1UAI5tFQDA%2Bk7J6cmNgA5pAADQv5NvAbxmCgAAzTk1nz0DAACBzioApgAA0I5zctkEAAACnV0ATAEAoL5z8/iiCYASAAD1XJLDbgEAQKCLC4ApAACs79L8PXkjoOtoAADQl1luAbxqCgAAq5kjd2d7BkAJAIDlzZW3HgIEgECzX7W//dPdbu7/EwAo5dXP5pu2zz4BmPPgAIBvzJ2vi9wCUAIAYD5L5KpnAAAg0KJX6u94HgAALvLKQlP1RScASx00ACRYMkcXvwWgBADA6ZbOT88AAECgVQqAKQAAHG%2BN3FxtAqAEAMC0tfJy1VsASgAA3GzNnFz9GQAlAADutXY%2BVnkIUAkAgO/UyMWqQfyujYIACPdypYviql8DrPWiAaAFNXOw%2Bj4ASgAAiWrnXzPh%2B%2B5P3A4AIMPLn9e/%2BK0%2BAdhr4WQAwNJaybtmCkAp7ZwUAFhCSznXVAEopa2TAwBzaS3fmisApbR3kgDgEi3mWpMFoJQ2TxYAnKrVPGvyoK56z7cDAOjUS42GfykNTwD2Wj55AHCT1vOr6YM7ZBoAQOtaD/695icAV/VyUgHI1FNOdVUASunr5AKQo7d86upgD7klAEBtvQX/XncTgKt6PekAjKHnHOq6AJTS98kHoF%2B950/XB3/ofbcEAFjYi50H/173E4CrRnlTAGjTSDkzzAs59P7jpgEAzOPFL8YJ/r3hXtAhRQCAc40Y/HtD3QK4zshvHgDLGT0/hn5xh0wDAJgyevDvRbzIQ4oAAIdSgn8v6sUeUgQASAv%2BvcgXfUgRAMiTGvx70S/%2B0AeKAMDwXggP/j0n4QbKAMA4hP69nJAJigBAvwT/zZyYEygDAO0T%2Bsdxks6kDAC0Q%2BifzgmbgTIAsD6hfxknbwEKAcD8BP68nMwVKAQApxP4y3JyK/lQKQD41vPCfnX/B97Z0h5YJmMVAAAAAElFTkSuQmCC%22%2C%20%22sizes%22%3A%20%22512x512%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%22%7D%2C%20%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAOz0lEQVR4nO3dXZMkRRUG4BpjfyAXiigK%2BBGBARe6yMeqLC4sKrIbXhoYfgGGiugF/3C86FmYHWamq7urKjPP%2BzwRfV8xmXXO26e6cqYJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIALZ60vgPq%2Bee/8vPU1wIj%2B98GZGs1qbC5O9i0NHpr4r4DACWweDqLZQ9%2BEAuayUbiVhg9jEwi4iY3BUzR8qE0g4AkbAU0fQgkD2Sx%2BKE0fuEwYyGPBg2j6wBzCQAaLHEDjB44hCNRmcYvS9IElCQP1WNBintX4gRV9LgiUYSGL0PiBLQkC47OAg9P4gZYEgXFZuEE9%2B5bGD/Tj898LAqOxYIPR%2BIGeCQLj%2BEbrC2A%2BzR/onTo1DkltAG4oYESmAX2zOB3T%2BIEKBIE%2BeQTQKc0fqEI965NU1plvu1GAwv5jGtANE4COaP5AdepcPwSATrgpgBTqXR%2BMYhpzIwDJPBJoxwSgIc0fSKcOtiMANGLTA%2Byoh20YvWzMRge4mUcC2zEB2JDmD3A7dXI7ktZGnrOpAWb7zCRgdSYAG9D8AQ6jbq5PwlrZc2/axADH%2BuxDk4C1mACsSPMHOI06uh4BYCU2LcAy1NN1CAArsFkBlqWuLk8AWJhNCrAO9XVZAsCCbE6AdamzyxEAFmJTAmxDvV2G1ysW8B2bEWBz//aK4ElMAE6k%2BQO0of6eRgA4gc0H0JY6fDwB4Eg2HUAf1OPjCABHsNkA%2BqIuH04AOJBNBtAn9fkwAgAABBIADiBdAvRNnZ5PAJjJpgIYg3o9j0MUZvjuGzYTwGj%2B9chBQbcxAQCAQALAHr79A4xJ/b6dAHALmwdgbOr4zQSAG9g0ADWo59cTAAAgkABwDWkRoBZ1/esEgCtsEoCa1Pen3Wl9Ab3x0igACUwALnleOgQoTZ3/igAAAIEEgAtSIUAG9X5HAJhsBoA06r4AAACR4gOAFAiQKb3%2BxwcAAEgU/dr7869npz8Apumfj88ie2H0QUCRKw4AU/AjgO/59g/AlNsPYgMAACSLDACpaQ%2BA6yX2hcgAAADp4gJAYsoDYL%2B0/hAXAAAAAQAAIkUFgLTxDgCHSeoTUQcBOfgHAHZieuL3g1LdKD591PoKoA8vvNH6CrjqHwHHA0dNAGhLw4frXb43hAG2IgCwOo0f5hMG2Er5Ecc0Gf%2B3ovHDMgSBNqo/Boh6C4DtaP6wHPcTa8h4BOD7/2Y%2Bfdz6CqCmJyHghdfbXgd1lJ8AfP/nxv9b0fxhfe6z7VTvH%2BUDwJnPJh9FCbbz6eP293zKp7LyAYD1faL5w%2Bbcd5yqdAB4ofj4pgeKELTj/ltf5T5SOgCwLsUH2nMfciwBAAACCQAcxbcO6If7kWOUDQCVn9u0pthAf9yX66naT8oGAADgZgIAB/EtA/rl/uQQZY8Crn6AA8B11D7mKjkBeLHo85rWPvbtArrnPl1Hxb5SMgAAALcTAAAgkAAAAIFqBoBzn6U/nivCOD5%2BPDWvGSU/xZQLAC%2B%2BVu%2BHGgC0V62/lAsAAMB%2BAgAABCp3EJBDMADUQvYzAQCAQAIAAAQSAAAgkAAAAIFKBYCXir2jCUBfKvWZUgEAAJhHAACAQKXOAfDeK8COesg%2BJgAAEEgAAIBApR4BkOeZ%2B62vgKu%2BeNj6CoA5agWAMi9nsI/G36/LayMMNKQesodHAAxH8x%2BHtYJ%2BCQAMRUMZjzWDPgkADEMjGZe1g/4IAAxBAxmfNYS%2BlPoRoIMvAHbUQ/YxAaB7vjnWYS2hHwIAAAQSAAAgkAAAAIEEAAAIJAAAQCABAAACCQAAEMhBQAAFqYfsYwIAAIFKTQD8/2uAC%2Bohe5gAAEAgAQAAAgkAABBIAACAQAIAAAQq9RaA914BdtRD9jEBAIBAAgAABBIAACCQAAAAgQQAAAgkAABAIAEAAAIJAAAQyEFAAAWph%2BxTKgD4/9cAF9RD9vAIAAACCQAAEEgAAIBAAgAABBIAACCQAED3vnjY%2BgpYirWEfggAABCo1DkADr6Afvn2vy31kH1MABiC5gGwLAGAYQgB47J20B8BgKFoJOOxZtAnAYDhaChj%2BOKhtYKelfoRIDmeNJZn7re9Dr5O04cxCAAMTbMBOI5HAAAQqNQE4Mz/vwaYpkk9ZD8TAAAIJAAAQCABAAACCQAAEEgAAIBAAgAABBIAACCQAAAAgWodBNT6AgA6oR6yjwkAAAQSAAAgkAAAAIEEAAAIJAAAQCABAAAClXoNcPL/rwF21EP2MAEAgEClJgAOvgDYUQ/ZxwQAAAIJAAAQSAAAgEACAAAEEgAAIJAAAACBBAAACOQcAICC1EP2MQEAgEACAAAEEgAAIJAAAACBBAAACFTqLQD//xrggnrIHiYAABBIAACAQKUeATj4AmBHPWQfEwAACCQAAEAgAQAAAgkAABBIAACAQAIAAAQSAAAgkAAAAIEcBARQkHrIPiYAABBIAACAQAIAAAQq9RsA//8a4IJ6yB4mAAAQSAAAgEACAAAEKvUbAO%2B9Auyoh%2BxjAgAAgQQAAAgkAABAIAEAAAIJAAAQSAAAgEACAAAEEgAAIJCDgAAKUg/ZxwQAAAIJAAAQqNQjAP//GuCCesgeJgAAEEgAAIBAAgAABBIAACCQAMAsP3219RUAc7lfmaPUWwAOvgBQC5nHBAAAAgkAzPYzY0XonvuUuQQAAAgkAABAIAGAgxgvQr/cnxxCAACAQAIAB/MtA/rjvuRQpQLAmc9mn7uKDXTj7qvta0LSp4pSAQAgjTDOsWoFgHOfLT93X5m5LsB6OqgFcZ8iagUANicEQDvuP04hAHAyRQi2577jVAIAi1CMYDvuN5YgALAYRQnWdfcV9xnLEQBYlAIF63BfsTQBgFUoVrAc9xNruNP6ApZU6YCGCl67KFp/%2BGPb64BRPbmH1DbWUCoA0CdBAOZ7zbd9NiIAsJmrhU0ggB1NnxYEAJpR9G5WLRxZa%2BiPHwECQCABAAACCQAAEEgAAIBAAgAABCr1FsBZof/TDJW4N6E/JgAAEEgAAIBAAgAABBIAACCQAAAAgQQAAAgkAABAoFrnALS%2BAOBa7k3ojwkAAAQSAAAgkAAAAIEEAAAIJAAAQCABAAACCQAAEKjUOQCT/zkOfXJvQndKBQCHjUCf3JvQH48AACCQAAAAgQQAAAgkAABAIAEAAAIJAAAQqNRrgHCTRx%2B1voJsI/793/hJ6yuAdQkAlDZi46EPT/aOIEBVpQKAw0a47EPNnwU8%2Bmia3hQCKMhvAChJ82dJ9hMVCQCUo1izBvuKagQASlGkWZP9RSUCAAAEEgAow7cztmCfUUWptwD8z3FgE2oNBZgAAECgUhMA5wAAW1BrqMAEAAACCQAAEEgAAIBAAgBlvPVy6ysggX1GFQIAAAQSACjFtzPWZH9RiQBAOYo0a7CvqEYAoCTFmiXZT1TkICDKuvfyNH3wp9ZXwejuvay2UFOpAABX3bv45iYIcKh7vvVTnABABMUc4Gl%2BAwAAgQQAAAhU6xGA/9ENALOYAABAIAEAAAIJAAAQqNRvABzWAQDzmAAAQCABAAACCQAAEKhUAPjgz2d%2BBgDAair1mVIBAACYRwAAgEACAAAEKnUOwDQ5CwAA5jABAIBAAgAABBIAACBQyUfmv/jx%2BXnrawCglt/9pc4ZANNkAgAAkQQAAAgkAABAIAEAAAKV%2BkHDZb/0Q0AAFvLbYj8AnCYTAACIJAAAQCABAAAClQ0AFZ/XALC9qv2kbAAAAG4mAABAIAEAAAKVDgBVn9sAsI3KfeRO6wtYW9mVA4ATlJ4AAADXi/iC/KsfORYYgMP85q91x//TZAIAAJEEAAAIFBEAqo9xAFhWQt%2BICAAAwNMEAAAIVH7Ecdnb3gYAYI/3A8b/02QCAACRogJASqoD4DhJfSIqAAAAOwIAAASKCwBJ4x0A5kvrD3EBAAAIDQBpKQ%2BA2yX2hcgAAADp4hLPZfcdDAQQ72Hgt/9pmqY7rS%2BgKe0fgFDRjwAe/i0z9QGwk9wHogMAAKSKDwDJ6Q8gWXr9jw8AAJBIAJikQIA06r4A8CWbASCDer8jAABAICnoind%2B6HAggKre8%2B3/SyYAABBIALhCOgSoSX1/mgBwDZsEoBZ1/esEAAAIJADcQFoEqEE9v54AcAubBmBs6vjNBIA9bB6AManft7vT%2BgJGcOZkAACKMQGY4d2/S5EAI1G39xMAZrKZAMagXs8jABzApgLomzo9nwAAAIEEgANJlwB9Up8PIwAcwSYD6Iu6fDgB4Eg2G0Af1OPjCAAnsOkA2lKHj%2BcPt4AHPzh3VBDAxh5o/icxAViATQiwLXX3dALAQmxGgG2ot8sQABZkUwKsS51djgCwMJsTYB3q67IEgBXYpADLUleXJwCsxGYFWIZ6ug5/1JU9eMkrggDHevCx5r8WE4CV2bwAx1E/1%2BWPu5F3TQIAZvu15r86E4CN2MwA86iX2xAANmRTA9xOndyOP3QjHgkAfEXj354JQCM2O8COetiGANCQTQ%2BkUwfb8YfvhEcCQBKNvz0TgE64GYAU6l0fLEJn3jMJAAp7R/PvhoXolCAAVKLx98cjgE65WYAq1LM%2BWZQBmAYAI9L4%2B2ZxBiIIACPQ%2BMfgEcBA3FRA79SpcVioQb33omkA0I93PtH4R2PBBicIAC1p/OOycEUIAsCWNP7xWcBiHgoCwIrua/xlWMiiBAFgSRp/PRY0gDAAHEPTr83iBhEEgDk0/gwWOZQwAFym6eex4AgDEErTz2bxeYowALVp%2BjxhI3ArgQDGpuFzExuDgwgE0DcNn7lsFE72vlAATbyt2XMCm4fVCQhwHA0eAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWvg/kf4cPpJ56i0AAAAASUVORK5CYII%3D%22%2C%20%22sizes%22%3A%20%22512x512%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22maskable%22%7D%5D%2C%20%22launch_handler%22%3A%20%7B%22client_mode%22%3A%20%22focus-existing%22%7D%7D" />
+  <meta name="theme-color" content="#4F7CFF" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="个人生活台" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="icon" href="data:image/png;base64,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" />
+  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAFVUlEQVR4nO3dS3MTRxTF8TsqfT8cICEpDGQHCQ9TofzAmFBgYwwUVbCgWAZi2KQSYj6hWahk3Eiy5tEz3ff0/1c1CxZIbc3R9VFrJFeWgXM7x8ep14A4vuxVVcr7T3Ln5x4Q4FJ8eTpswAe7M0KMIcLd6x0QYizSV7h7udEVgoyajiIHexTzxswIM5qJnZdoz46VbYKMbo72u0/rKIH+gTAjkv87hrrTfybI6EvbYLfu0IQZfWqbr1bPgvOEGQP53HBSN57QhBlDapq3Ruk/f58wI43Pz+pN6tqBvkCYkdh/NUJdq3IQZuSgTg6XBpowIyfL8jhedgNJL24FGjozrxe3mM7I078H8/v0wspBmJGzRflcWDmoGvBo7oT+kekMB+bldCbQhBmefJ/XmcpB1YBnQX5/2mQ6w6d/nk92PaJ/BAtIKagc1A14dzKhL1E34Ng0v1QOSDmpHBXzGQIqM7OfN6gb0EDlgJSxGbsb0MGEhpTRL/RnCBmzuwElVA5IWfqZQu8+vUi9gvxc3ki9gv5Ul9c1O/RHgrzUqmCw5QJNkJtTCrZUhybM7Sg9buxywMx0ruWRmdCHL1OvwDeVx08m0ICZ2aiyybUcng+V6ZLa4cv057LrwYSGlLGJvBhAJM7zMObSUZzmPQ9UDkgh0JBSZOVYeZh6BbOOdlOvYMJ7Hoqb0DmG2WyyrlzX5snIjs3cHzV5CEzyNaY+lx2PIisHFvOeh+IqB7QRaEihciDgPQ+89Y2Q8zxQOSCFyoGA9zwwoSGFQEMKlQMB73lglwMh53koqnLkckXbWTysMWdUDgS856GoCW2W7wQ82s13bZ7If/voPARHF5UDAe95YJcDIed5KK5DQxuVAwHveWBCQwqBhhS+8BwB73lgQkMKgYYUdjkQ8J4HJjSkEGhIYZcDAe95YEJDCoGGFHY5EPCeByY0pHA9NELO80DlQMB7HqgckEKgIYXKgYD3PDChIYVdDoSc50FiQt++lXoFGhQeRzo0TihkQWJCm5ndEZguKak8fjKBBszMRpVNftUoHGsiU2Zoa7fSn7tox53fj52/rp3vzdvUK8jf2s3UK4hPNtBTBHuWYpCnqjXxQA/hdcQnzV3hsA2BF4WQQqAhhU99Z4bz0Q0TGlIINKRwLUdmOB/dMKEhhUBDCrscmeF8dFP9cYN3Cl+9S72CeO79lnoFaRVfOZTCbKb38zQldflo00P15L96l/6xTXUUP6GhhU99qyr0vPLGiqhSz2vRlWP9RuoV9EP156qj6ECb6Z18tZ+nqWr9OvvQ0FH8hIYWdjkghV0OSKFyQAqBhhQqB6QwoSGFXQ5IoXJACpUDUgg0pFA5IIUXhZBC5YAUKgekMKEhhUBDCpUDUtjlgBQqB6RQOSCFCQ0pBBpS+MJzSGFCQwqBhhR2OSCFCQ0pBBpS2OWAFCY0pIwe/1XxuhAyxmbl/j0O6KFyQAqBhpSTtvH4V/7WCnx79L6qmNCQQqAhJdjgeELtgFN/vp9sPzOhIWUc/Iv5DOdm3lPZvUbtgC8PP3x7t5vKASkzgT6ddiB33+d1YXj3qB7I3M6c4UvlgJQz68XeVaY08rTz9/xqvLQvPyXUyMyDBWE2o3JAzNJAn/VsAIa2LI+1w7pP9UBi2zWGa6Ppu3+FUCON7cN6TaFRh657o0BMTXLXKqDPmNQYyP2GQ7TVLkfTOwHaaJOz1tt2hBp9apuvKKE8oIIgkq2OgzLalD1YJdToZutj99/60WsDwUZTMYI81UsPfk6oUdNmxDCb9fy1dgQbi8QO8tRgOxWEG32F+LQkW28vCHcxNgYI8WlfAcfugBmKAzK2AAAAAElFTkSuQmCC" />
+
+  <style>
+    :root {
+      --bg: #0f1226;
+      --brand: #4F7CFF;
+      --brand2: #8A5CFF;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body {
+      margin: 0; height: 100%; width: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg); color: #fff; overflow: hidden;
+    }
+    /* 全屏 iframe 承载工作台 */
+    #frame {
+      position: fixed; inset: 0; width: 100%; height: 100%;
+      border: 0; display: none; background: #fff;
+    }
+    #frame.show { display: block; }
+
+    /* 启动遮罩（品牌闪屏） */
+    #splash {
+      position: fixed; inset: 0; z-index: 50;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 18px;
+      background: radial-gradient(120% 120% at 50% 0%, #1b2150 0%, #0f1226 60%);
+      transition: opacity .45s ease;
+    }
+    #splash.hide { opacity: 0; pointer-events: none; }
+    #splash .logo {
+      width: 104px; height: 104px; border-radius: 24px;
+      background: linear-gradient(145deg, var(--brand), var(--brand2));
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 18px 40px rgba(79,124,255,.35);
+    }
+    #splash .logo svg { width: 58px; height: 58px; }
+    #splash h1 { font-size: 22px; font-weight: 700; margin: 6px 0 0; letter-spacing: .5px; }
+    #splash p { margin: 0; color: #9aa3c7; font-size: 13px; }
+    .spinner {
+      width: 26px; height: 26px; border-radius: 50%;
+      border: 3px solid rgba(255,255,255,.18); border-top-color: #fff;
+      animation: spin .8s linear infinite; margin-top: 6px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #openBtn {
+      margin-top: 8px; padding: 12px 26px; border: 0; border-radius: 999px;
+      font-size: 15px; font-weight: 600; color: #fff; cursor: pointer;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 10px 24px rgba(79,124,255,.4); display: none;
+    }
+    #openBtn.show { display: inline-block; }
+
+    /* 顶部悬浮工具条 */
+    #bar {
+      position: fixed; top: env(safe-area-inset-top, 0); left: 0; right: 0; z-index: 40;
+      display: none; align-items: center; gap: 10px; padding: 8px 12px;
+      background: linear-gradient(180deg, rgba(15,18,38,.92), rgba(15,18,38,0));
+    }
+    #bar.show { display: flex; }
+    #bar .title { font-size: 14px; font-weight: 600; color: #fff; flex: 1; opacity: .92; }
+    #bar button {
+      border: 0; width: 38px; height: 38px; border-radius: 12px; cursor: pointer;
+      background: rgba(255,255,255,.12); color: #fff; font-size: 17px;
+      display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(8px);
+    }
+    #bar button:active { background: rgba(255,255,255,.22); }
+
+    /* 应用内“安装到桌面”横幅（捕获 beforeinstallprompt 后展示） */
+    #installBar {
+      position: fixed; left: 12px; right: 12px;
+      bottom: calc(env(safe-area-inset-bottom,0) + 12px); z-index: 60;
+      display: none; align-items: center; gap: 10px; padding: 10px 12px;
+      border-radius: 16px; background: rgba(20,24,52,.96);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 12px 30px rgba(0,0,0,.45); backdrop-filter: blur(8px);
+    }
+    #installBar.show { display: flex; }
+    #installBar .txt { flex: 1; font-size: 13px; line-height: 1.4; color: #e8ebf7; }
+    #installBar .txt b { color: #fff; }
+    #installBar .go {
+      border: 0; padding: 9px 16px; border-radius: 999px; cursor: pointer;
+      font-size: 13px; font-weight: 600; color: #fff; white-space: nowrap;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+    }
+    #installBar .no {
+      border: 0; background: transparent; color: #9aa3c7; font-size: 18px;
+      cursor: pointer; padding: 4px 8px; line-height: 1;
+    }
+
+    /* 加载失败提示 */
+    #fallback {
+      position: fixed; left: 16px; right: 16px; bottom: calc(env(safe-area-inset-bottom,0) + 16px);
+      z-index: 45; display: none; padding: 14px 16px; border-radius: 16px;
+      background: rgba(20,24,52,.96); border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 12px 30px rgba(0,0,0,.4); font-size: 13px; line-height: 1.5;
+    }
+    #fallback.show { display: block; }
+    #fallback a { color: #8ab0ff; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <iframe id="frame" allow="clipboard-read; clipboard-write" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <div id="splash">
+    <div class="logo">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="12" y="12" width="40" height="28" rx="5" fill="#fff"/>
+        <rect x="17" y="18" width="22" height="5" rx="2.5" fill="#4F7CFF"/>
+        <rect x="28" y="40" width="8" height="5" fill="#fff"/>
+        <rect x="20" y="45" width="24" height="5" rx="2.5" fill="#fff"/>
+      </svg>
+    </div>
+    <h1>个人生活台</h1>
+    <p>WorkBuddy 资料库工作台</p>
+    <div class="spinner" id="spinner"></div>
+    <button id="openBtn">打开工作台</button>
+  </div>
+
+  <div id="bar">
+    <div class="title">个人生活台</div>
+    <button id="refreshBtn" title="刷新">↻</button>
+    <button id="extBtn" title="在浏览器打开">↗</button>
+  </div>
+
+  <div id="fallback">
+    工作台未能在应用内加载（可能因登录态或网络限制）。请点此
+    <a id="fbLink" href="#" target="_blank" rel="noopener">在浏览器中打开</a>，
+    登录后即可正常使用。
+  </div>
+
+  <!-- 安装到桌面横幅 -->
+  <div id="installBar">
+    <div class="txt">可把<b>个人生活台</b>安装到桌面，像 App 一样打开</div>
+    <button class="go" id="installGo">安装</button>
+    <button class="no" id="installNo" title="稍后">×</button>
+  </div>
+
+  <script>
+    const SPACE_URL = "https://www.workbuddy.cn/space/d/bFuJ9NzcYiul6EUBKZNXmt";
+    const splash = document.getElementById('splash');
+    const spinner = document.getElementById('spinner');
+    const openBtn = document.getElementById('openBtn');
+    const frame = document.getElementById('frame');
+    const bar = document.getElementById('bar');
+    const fallback = document.getElementById('fallback');
+    const fbLink = document.getElementById('fbLink');
+    fbLink.href = SPACE_URL;
+
+    let loaded = false;
+    function reveal() {
+      if (loaded) return;
+      loaded = true;
+      frame.classList.add('show');
+      bar.classList.add('show');
+      splash.classList.add('hide');
+      setTimeout(() => splash.remove(), 500);
+    }
+    function showFallback() {
+      spinner.style.display = 'none';
+      openBtn.classList.add('show');
+      fallback.classList.add('show');
+    }
+
+    function loadSpace() {
+      frame.src = SPACE_URL;
+    }
+
+    // iframe 加载完成 -> 进入应用；超时(8s)未触发 -> 显示兜底
+    frame.addEventListener('load', () => { reveal(); });
+    const guard = setTimeout(showFallback, 8000);
+
+    openBtn.addEventListener('click', () => { clearTimeout(guard); loadSpace(); });
+    document.getElementById('refreshBtn').addEventListener('click', () => { frame.src = SPACE_URL; });
+    document.getElementById('extBtn').addEventListener('click', () => window.open(SPACE_URL, '_blank', 'noopener'));
+
+    // 启动即加载（首屏为品牌闪屏，加载完淡出）
+    loadSpace();
+
+    // 注册 Service Worker（实现可安装 + 离线闪屏）——尽早注册以满足安装条件
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    }
+
+    // 捕获安装事件：即使浏览器不主动弹窗，也提供应用内“安装到桌面”按钮
+    let deferredPrompt = null;
+    const installBar = document.getElementById('installBar');
+    const installGo = document.getElementById('installGo');
+    const installNo = document.getElementById('installNo');
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installBar.classList.add('show');
+    });
+    installGo.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      try { await deferredPrompt.userChoice; } catch (_) {}
+      deferredPrompt = null;
+      installBar.classList.remove('show');
+    });
+    installNo.addEventListener('click', () => {
+      deferredPrompt = null;
+      installBar.classList.remove('show');
+    });
+    window.addEventListener('appinstalled', () => installBar.classList.remove('show'));
+  </script>
+</body>
+</html>
